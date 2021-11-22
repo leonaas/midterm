@@ -13,4 +13,22 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="constlayout2_style">
+        <item name="android:layout_height">243dp</item>
+        <item name="android:layout_width">229dp</item>
+        <item name="android:layout_marginStart">91dp</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:layout_marginEnd">91dp</item>
+    </style>
+
+    <style name="textview3_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/imya</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+
+    <string name="imya">имя</string>
 </resources>
