@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnClick motion:clickAction="toggle"
+            motion:targetId="@+id/stars_linear">
+
+        </OnClick>
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/review"
+            android:layout_width="118dp"
+            android:layout_height="61dp"
+            android:backgroundTint="#2A00BCD4"
+            android:text="@string/all_review"
+            android:textColor="@color/teal_700"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear">
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/stars_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/review"
+            app:layout_constraintTop_toTopOf="@id/review"
+            app:layout_constraintBottom_toBottomOf="@id/review">
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/review"
+            android:layout_width="118dp"
+            android:layout_height="61dp"
+            android:backgroundTint="#2A00BCD4"
+            android:text="@string/all_review"
+            android:textColor="@color/teal_700"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/linear"
+            motion:layout_constraintStart_toStartOf="parent">
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/stars_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/review"
+            app:layout_constraintTop_toBottomOf="@id/review"
+            app:layout_constraintEnd_toEndOf="@id/review"
+            android:layout_marginTop="10dp">
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

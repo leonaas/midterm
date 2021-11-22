@@ -15,6 +15,7 @@ class MainActivity2 : AppCompatActivity() {
 
         next.setOnClickListener{
             startActivity(Intent(this,MainActivity::class.java))
+            finish()
         }
     }
 }

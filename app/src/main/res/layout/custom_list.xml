@@ -102,7 +102,7 @@
             android:id="@+id/textView3"
             android:layout_width="303dp"
             android:layout_height="99dp"
-            android:text="Air max are always very comfortable fit, clean and just perfect in every way. just the box was too small and scrunched the sneakers up a little bit, not cure if the box was always this small but the 90s are and will always be one of my favorites. "
+            android:text="@string/comment"
             tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="568dp" />
 

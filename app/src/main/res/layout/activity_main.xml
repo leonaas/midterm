@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layoutDescription="@xml/activity_main_xml_constraintlayout_scene">
 
         <LinearLayout
             android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:orientation="horizontal"
             android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -24,39 +26,40 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/back"
-                />
+                app:srcCompat="@drawable/back" />
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="74dp"
-                android:layout_height="28dp"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
                 android:text="@string/review"
-                android:textStyle="bold"
-                android:textSize="15sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linear2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/review"
+            android:layout_width="118dp"
+            android:layout_height="61dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal"
+            android:backgroundTint="#2A00BCD4"
+            android:text="@string/all_review"
+            android:textColor="@color/teal_700"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear">
+            app:layout_constraintTop_toBottomOf="@+id/linear" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="118dp"
-                android:layout_height="61dp"
-                android:backgroundTint="#2A00BCD4"
-                android:text="@string/all_review"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="82dp" />
+        <LinearLayout
+            android:id="@+id/stars_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/review"
+            app:layout_constraintTop_toTopOf="@id/review"
+            app:layout_constraintBottom_toBottomOf="@id/review">
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -64,15 +67,16 @@
                 app:srcCompat="@android:drawable/btn_star_big_on" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/star2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:backgroundTint="@color/white"
                 app:srcCompat="@android:drawable/btn_star_big_on" />
 
+
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/star3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -80,6 +84,7 @@
                 app:srcCompat="@android:drawable/btn_star_big_on" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -88,7 +93,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linear2">
+            app:layout_constraintTop_toBottomOf="@id/stars_linear">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -96,15 +101,14 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="40dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 tools:listitem="@layout/custom_list" />
-
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
 </ScrollView>
