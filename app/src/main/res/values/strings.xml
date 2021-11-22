@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Midterm</string>
+    <string name="review">5 review</string>
+    <string name="all_review">All review</string>
 </resources>
